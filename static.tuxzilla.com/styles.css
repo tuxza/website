@@ -125,7 +125,7 @@ body {
 .my-pfp {
     width: min(400px, 40vw);
     aspect-ratio: 1;
-    background-image: url(https://cdn.discordapp.com/avatars/1079199944738615367/dde2cd6c226f9b35f12b517e66744a1d.webp?size=1024);
+    background-image: url(https://static.tuxzilla.com/tuxzilla1.jpg);
     background-size: cover;
     background-position: center;
     border-radius: 50%; /* tux remember this rounds images !!*/
