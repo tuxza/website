@@ -30,6 +30,7 @@
     --container-bg-alt: #0f0f0f;
     --nav-bg: #000000;
     --nav-font: "Ubuntu Mono", monospace;
+    --nav-font-size: 1.5rem;
 }
 
 body.baseplatia {
@@ -51,7 +52,29 @@ body.baseplatia {
     --nav-color: #ffffff;
     --nav-bg: #000000;
     --accent-color: #777;
-    --nav-font: "Legothick", sans-serif;
+    --nav-font: "Legothick";
+    --nav-font-size: 1.33rem;
+}
+
+body.tuxhost {
+    --bg-color: #000000;
+    --bg-pattern: radial-gradient(
+        circle at 1px 1px,
+        rgb(67, 67, 67) 1px,
+        transparent 0
+    );
+    --text-main: #ffffff;
+    --text-content: #ffffff;
+    --accent-color: #777;
+    --link-color: #ffffff;
+    --link-hover: #000000;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --container-bg: #000000;
+    --container-bg-alt: #0f0f0f;
+    --nav-color: #ffffff;
+    --nav-bg: #000000;
+    --nav-font: "Ubuntu Mono", monospace;
+    --nav-font-size: 1.5rem;
 }
 
 body {
@@ -68,6 +91,11 @@ body {
     flex-direction: column;
 }
 
+main {
+    flex: 1;
+    padding-top: 72px;
+}
+
 .nav {
     position: fixed;
     display: flex;
@@ -80,11 +108,12 @@ body {
     color: var(--nav-color);
     border-bottom: 2px solid var(--accent-color);
     font-family: var(--nav-font);
+    z-index: 10;
 }
 
 .nav-current-page {
     color: inherit;
-    font-size: 1.4rem;
+    font-size: var(--nav-font-size);
     margin-left: 15px;
 }
 
@@ -102,7 +131,7 @@ body {
 }
 
 .nav-links {
-    font-size: 1.4rem;
+    font-size: var(--nav-font-size);
     display: flex;
     margin-right: 40px;
     gap: 24px;
@@ -258,6 +287,31 @@ body {
     background: var(--container-bg);
 }
 
+.button {
+    border: 2px solid var(--accent-color);
+    background: var(--container-bg-alt);
+    color: var(--text-content);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 150ms ease, color 150ms ease;
+}
+
+.button:visited {
+    color: var(--text-content);
+}
+
+.button:hover,
+.button:focus-visible {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
 .lots-of-containers {
     display: flex;
     justify-content: center;
@@ -274,6 +328,20 @@ body {
     border: 2px solid var(--accent-color);
     padding: 40px;
     background: var(--container-bg);
+}
+
+.container a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.container a:visited {
+    color: var(--link-color);
+}
+
+.container a:hover {
+    color: var(--text-content);
+    text-decoration: underline;
 }
 
 .container-right {
@@ -412,7 +480,7 @@ li {
     color: var(--link-color);
 }
 
-.project status {
+.status {
     font-size: clamp(1rem, 2vw, 1.3rem);
     color: var(--text-content);
     align-content: center;
@@ -429,6 +497,14 @@ footer {
     position: relative;
     z-index: 1;
     margin-top: 20px;
+}
+
+.footer-bottom a {
+    color: inherit;
+}
+
+.footer-bottom a:visited {
+    color: inherit;
 }
 
 .footer-inner {
@@ -499,7 +575,7 @@ footer {
         box-sizing: border-box;
     }
 
-    .nav-page {
+    .nav-current-page {
         margin-left: 0;
     }
 
@@ -512,6 +588,10 @@ footer {
     }
 
     body {
+        padding-top: 0;
+    }
+
+    main {
         padding-top: 0;
     }
 
