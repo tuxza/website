@@ -1,13 +1,11 @@
 @use "variables" as *;
 
-$ink: #111111;
-$paper: #f4f1ea;
-
 .hero {
     padding: 6rem 1.5rem 3rem;
     text-align: center;
-    background: $ink;
-    color: $paper;
+    background: $bg;
+    color: $accent;
+    border-bottom: 3px solid $accent;
 
     .hero-tag {
         font-size: 0.85rem;
@@ -36,8 +34,8 @@ $paper: #f4f1ea;
 
 .button-ghost {
     background: transparent;
-    border: 2px solid $paper;
-    color: $paper;
+    border: 2px solid $text;
+    color: $text;
 }
 
 .stats {
@@ -45,7 +43,7 @@ $paper: #f4f1ea;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     background: $bg;
     color: $text;
-    border-bottom: 3px solid $ink;
+    border-bottom: 3px solid $accent;
     text-align: center;
 
     > div {
